@@ -2,3 +2,15 @@ body {
     background-image: url('https://i.imgur.com/uLSR20n.png');
     color: white;
 }
+
+.character {
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 20px;
+    width: 226px;
+    background: black;
+    color: white;
+    border: 3px white solid;
+    font-weight: bold;
+    font-size: 14px;
+}
