@@ -3,9 +3,15 @@ body {
     color: white;
 }
 
+main {
+    padding-top: 50px;
+}
+
 .character {
     box-sizing: border-box;
-    padding: 10px;
+    padding: 10px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
     margin: 20px;
     width: 226px;
     background: black;
@@ -13,4 +19,9 @@ body {
     border: 3px white solid;
     font-weight: bold;
     font-size: 14px;
+    opacity: .8;
+}
+
+.character:hover {
+    opacity: 1;
 }

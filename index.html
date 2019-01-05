@@ -16,27 +16,30 @@
     <header class="mx-auto text-center"><h1>Star Wars RPG!</h1></header>
 
     <main class='container'>
-        <div class='row' id='choose-hero'>
-            <div class='col mx-auto text-center'>
-                Pick Your Hero
-            </div>
+        <div class='row mx-auto text-center' id='choose-hero'>
+            <h3 class='mx-auto text-center'>Pick Your Hero</h3>
+            <div class='row mx-auto text-center' id='bullpen'></div>
         </div>
-        <div class='row' id='enemies-remaining'>
-            <div class='col'>
-                Enemies Remaining
+        <div id='game-screen'>
+            <div class='row'>
+                <div class='col'>
+                    <h3 class='mx-auto text-center'>Choose Your Opponent</h3>
+                    <div class='row mx-auto text-center' id='enemies-remaining'></div>
+                </div>
             </div>
+            <div class='row' id='arena'>
+                <div class='col-3'></div>
+                <div class='col-3 text-center'>
+                        <h3 class='mx-auto text-center'>Your Character</h3>
+                        <div class='mx-auto text-center' id='you'></div>
+                </div>
+                <div class='col-3 text-center' id='them'>
+                    <h3 class='mx-auto text-center'>Your Opponent</h3>
+                </div>
+                <div class='col-3'></div>
+            </div>
+            <div id='test'>Test</div>
         </div>
-        <div class='row' id='game-screen'>
-            <div class='col-3'></div>
-            <div class='col-3 text-center'>
-                Your Character
-            </div>
-            <div class='col-3 text-center'>
-                Your Opponent
-            </div>
-            <div class='col-3'></div>
-        </div>
-        <div id='test'>Test</div>
     </main>
 </body>
 </html>
