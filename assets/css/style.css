@@ -25,3 +25,11 @@ main {
 .character:hover {
     opacity: 1;
 }
+
+.ignore-hover {
+    opacity: 1;
+}
+
+.w-50 {
+    
+}
