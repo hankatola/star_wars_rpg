@@ -89,7 +89,7 @@ function chooseOpponent() {
         if (c[i].fought === false && c[i].chosen === false) {
             anyoneAlive = true
             console.log(c[i].fought,c[i].chosen)
-            break    
+            break
         }
     }
     console.log(anyoneAlive)
@@ -125,6 +125,7 @@ function reset() {
     heroSelection = true
     $('#game-screen').hide()
     $('#choose-hero').show()
+    $('#anyone-left').show()
     for (let i in c) {
         avatar(c[i],true).appendTo($('#bullpen')).on('click',selectFunction)
     }
@@ -134,7 +135,7 @@ function fight() {
     let players = findPlayer()
     let you = players[0]
     let them = players[1]
-    if (them === false) {                               // ignore if no enemy chosen
+    if (them === false || you.dead === true) {                               // ignore if no enemy chosen
         return
     }
     you.hp -= them.counter
@@ -143,7 +144,7 @@ function fight() {
     $('#you').empty()
     $('#them').empty()
     if (you.hp <= 0) {
-        alert('you lost')
+        you.dead = true
     }
     if (them.hp <= 0) {
         them.dead = true
