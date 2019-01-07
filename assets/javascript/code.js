@@ -10,7 +10,7 @@ $(document).ready(function() {
     Function farm
     ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 */
-function createCharacters() {
+function createCharacters() {                                   // creates character memory objects
     function character(name,image,attack,counter,hp) {
         this.name = name
         this.image = image
@@ -30,8 +30,7 @@ function createCharacters() {
     return c
 }
 
-function avatar(c,start=false) {
-    // draws avatars
+function avatar(c,start=false) {                                // draws avatars
     let image,hp,atk,name,stats,out                                     // function variables
     if (c.dead === true) {c.image = 'dead'}                             // use the dead image if they're dead
     image = $('<img>',{                                                 // create html image object
@@ -56,7 +55,7 @@ function avatar(c,start=false) {
     return out
 }
 
-function findPlayer(image=false) {
+function findPlayer(image=false) {                              // returns chosen avatar & currently chosen opponent
     let av = [false,false]
     if (image === false) {                                              // returns player & alive opponent
         for (let i in c) {
@@ -75,7 +74,7 @@ function findPlayer(image=false) {
     return av
 }
 
-function chooseOpponent() {
+function chooseOpponent() {                                     // chooses an opponenet to fight
     if (findPlayer()[1] != false) {return}                      // ignore if an alive opponent exists
     $('#them').empty()
     $(this).remove()
@@ -112,7 +111,6 @@ function selectFunction() {                                     // selects oppon
 
 function reset() {                                              // resets game
     c = createCharacters()
-    heroSelection = true
     $('#game-screen').hide()
     $('#choose-hero').show()
     $('#anyone-left').show()
@@ -148,7 +146,6 @@ function fight() {                                              // governs fight
 
 var c = createCharacters()
 var audio = new Audio('assets/audio/lightsaber.mp3')
-var heroSelection = true
 reset()
 $('#game-screen').hide()
 $('.selectable').on('click',selectFunction)
